@@ -1,27 +1,42 @@
-# React + TypeScript + Vite
+# Challenge improvein
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Description
 
-Currently, two official plugins are available:
+This challenge aims to evaluate basic skills in React development. The idea is to build an simple data query website for music bands.
+https://github.com/improvein/dev-challenge/blob/master/frontend-react/README.md
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Feautures
 
-## Expanding the ESLint configuration
+- **React with TypeScript:** The project is developed using React with TypeScript.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Clean Code Architecture:** The project follows a Clean Code architecture, promoting separation of concerns and maintainability.
 
-- Configure the top-level `parserOptions` property like this:
+- **Redux for Global State Management:** Redux is used to manage global application state, allowing for efficient data management and synchronization.
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+- **Storybook for Component Library:** The project includes my custom library of components built with Storybook.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- **Axios for Data Fetching:** Axios is utilized for making HTTP requests. It also includes an interceptor for error handling, allowing for the display of appropriate error messages.
+
+- **React Router Dom for Routing:** React Router Dom is used for handling client-side routing, enabling navigation and view management in a single-page application.
+
+- **Firebase:** Firebase is used for user authentication and other related features.
+
+## Technologies
+
+- React
+- TypeScript
+- Vite
+- Redux
+- Storybook
+- Axios
+- React Router Dom
+- Firebase
+
+## Installation
+
+- git clone https://github.com/RamiroFraysse/challenge-improvein.git
+  cd challenge-improvein
+
+- Install dependencies: pnpm | npm install
+
+- Usage: pnpm | run dev
