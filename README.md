@@ -13,11 +13,11 @@ https://github.com/improvein/dev-challenge/blob/master/frontend-react/README.md
 
 - **Redux for Global State Management:** Redux is used to manage global application state, allowing for efficient data management and synchronization.
 
-- **Storybook for Component Library:** The project includes my custom library of components built with Storybook. rf-sb-components
+- **Storybook for Component Library:** The project includes my custom library of components built with Storybook. rf-sb-components( https://github.com/RamiroFraysse/rf-sb-components )
 
 - **Axios for Data Fetching:** Axios is utilized for making HTTP requests. It also includes an interceptor for error handling, allowing for the display of appropriate error messages.
 
-- **React Router Dom for Routing:** React Router Dom is used for handling client-side routing, enabling navigation and view management in a single-page application.
+- **React Router Dom for Routing:** React Router Dom is used for handling client-side routing. Additionally, custom guards are implemented to manage route privacy and access control
 
 - **Firebase:** Firebase is used for user authentication and other related features.
 
