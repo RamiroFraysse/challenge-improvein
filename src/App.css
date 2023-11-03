@@ -1,0 +1,14 @@
+body {
+  background-color: #252d4a;
+  text-align: center;
+  min-heigth: 100vh;
+}
+#root {
+  text-align: center;
+  min-width: 100%;
+  min-heigth: 100%;
+}
+
+.app {
+  background-color: #252d4a;
+}

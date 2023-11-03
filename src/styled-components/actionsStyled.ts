@@ -1,0 +1,8 @@
+import styled from "styled-components"
+import { Link } from "react-router-dom";
+
+export const LinkStyled = styled(Link)`
+  color:#6EE7B7;
+  text-decoration:none;
+  cursor:pointer;
+`;
