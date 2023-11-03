@@ -5,14 +5,20 @@ import MemoizedHomeHeader from "./components/HomeHeader";
 import { LIMIT_PER_PAGE } from "@/utilities";
 
 function Home() {
-  const { bands, isLoadingApi, onFilterData, onSortData, onSetCurrentPage } =
-    useBand();
+  const {
+    bands,
+    isLoadingApi,
+    onFilterData,
+    onSortData,
+    onSetCurrentPage,
+    isFinishPage,
+  } = useBand();
   return (
     <Layout>
       <MemoizedHomeHeader onFilterData={onFilterData} onSortData={onSortData} />
       <Container>
         <HomeList bands={bands} />
-        {bands.length >= LIMIT_PER_PAGE && (
+        {bands.length >= LIMIT_PER_PAGE && !isFinishPage && (
           <ButtonSort
             onClick={() => onSetCurrentPage()}
             disabled={isLoadingApi ? true : false}

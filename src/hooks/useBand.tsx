@@ -11,6 +11,7 @@ export function useBand() {
   const isLoadingApi = useSelector((state: AppStore) => state.loader);
   const [bands, setBands] = useState<IBand[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
+  const [isFinishPage, setIsFinishPage] = useState<boolean>(false);
 
   const getInitialData = () => {
     dispatch(setLoadingApi(true));
@@ -27,6 +28,10 @@ export function useBand() {
     dispatch(setLoadingApi(true));
     getPaginateBands(page)
       .then((res: AxiosResponse<IBand[]>) => {
+        if (res.data.length === 0) {
+          setIsFinishPage(true);
+          setCurrentPage(currentPage - 1);
+        }
         setBands((prevBands) => prevBands.concat(res.data));
       })
       .finally(() => {
@@ -41,7 +46,6 @@ export function useBand() {
         if (a.name > b.name) return 1;
         return 0;
       });
-      console.log({ dataSorted });
       setBands([...dataSorted]);
     } else {
       const dataSorted = bands.sort((a, b) => {
@@ -49,19 +53,18 @@ export function useBand() {
         if (a.name < b.name) return 1;
         return 0;
       });
-      console.log({ dataSorted });
       setBands([...dataSorted]);
     }
   };
 
   const onFilterData = (filter: string) => {
+    setCurrentPage(1);
     dispatch(setLoadingApi(true));
     getPaginateBands(currentPage, filter)
       .then((res: AxiosResponse<IBand[]>) => {
         setBands(res.data);
       })
       .finally(() => {
-        setCurrentPage(1);
         dispatch(setLoadingApi(false));
       });
   };
@@ -82,6 +85,7 @@ export function useBand() {
     onSetCurrentPage,
     onSortData,
     isLoadingApi,
+    isFinishPage,
     onFilterData,
   };
 }
