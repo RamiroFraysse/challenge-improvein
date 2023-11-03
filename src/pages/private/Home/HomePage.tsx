@@ -1,5 +1,5 @@
 import { useBand } from "@/hooks";
-import { Container, Layout, ButtonSort } from "./styled-components";
+import { Container, Layout, ButtonSort, HomeTitle } from "./styled-components";
 import HomeList from "./components/HomeList";
 import MemoizedHomeHeader from "./components/HomeHeader";
 import { LIMIT_PER_PAGE } from "@/utilities";
@@ -13,6 +13,13 @@ function Home() {
     onSetCurrentPage,
     isFinishPage,
   } = useBand();
+
+  if (bands.length === 0)
+    return (
+      <Layout>
+        <HomeTitle>Cargando..</HomeTitle>
+      </Layout>
+    );
   return (
     <Layout>
       <MemoizedHomeHeader onFilterData={onFilterData} onSortData={onSortData} />

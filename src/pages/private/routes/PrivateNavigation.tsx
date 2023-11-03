@@ -1,15 +1,21 @@
 import { PrivateRoutes } from "@/routes";
-import { Navigate, Route } from "react-router";
+import { Navigate, Route, useNavigate } from "react-router";
 import RoutesWithNotFound from "@/routes/RoutesWithNotFound";
 import { lazy } from "react";
 import { Navbar } from "rf-sb-components";
 import BandPage from "../Home/Band/BandPage";
 import { useAuth } from "@/hooks";
+import {
+  MAIN_BLUE_COLOR,
+  MAIN_GREEN_COLOR,
+  SECONDARY_BLUE_COLOR,
+} from "@/utilities";
 
 const Home = lazy(() => import("../Home/HomePage"));
 
 function Private() {
   const { logout } = useAuth();
+  const navigate = useNavigate();
   const navActions = [
     {
       label: "logout",
@@ -21,10 +27,21 @@ function Private() {
   return (
     <>
       <Navbar
-        background="linear-gradient(to right, #6EE7B7, #1d4e89)"
+        background={`linear-gradient(to right, ${MAIN_GREEN_COLOR}, ${SECONDARY_BLUE_COLOR})`}
         stylesNav={{ position: "fixed", zIndex: 1 }}
-        stylesActions={{ backgroundColor: "#252d4a", color: "#fff" }}
-        logo={<>improvein</>}
+        stylesActions={{
+          backgroundColor: `${MAIN_BLUE_COLOR}`,
+          color: "#fff",
+        }}
+        logo={
+          <a
+            onClick={() => {
+              navigate(PrivateRoutes.BANDS, { replace: true });
+            }}
+          >
+            improvein
+          </a>
+        }
         navActions={navActions}
       />
       <RoutesWithNotFound>

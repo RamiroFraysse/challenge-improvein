@@ -8,6 +8,7 @@ export const getValidationError = (errorCode:string) =>{
     email:"This is not a valid email",
     pattern:"This value is not valid",
     ERR_NETWORK:"Se rompio la red",
+    ERR_BAD_REQUEST:"Bad request",
     UNAUTHORIZED: "Please log in to continue",
     BAD_REQUEST: "Invalid format on sent data",
     FORBIDDEN:"You don't have permission to execute that",
@@ -16,7 +17,9 @@ export const getValidationError = (errorCode:string) =>{
    'auth/email-already-in-use':"The email already in use"
   }
   const codeMatcherFirebase:TypeWithKey<string> = {
-    'auth/email-already-in-use':"The email already in use"
+    'auth/invalid-email': "The email address you provided is invalid. Please make sure it's a valid email address and try again",
+    'auth/email-already-in-use':"The email already in use",
+    'auth/invalid-login-credentials':'Invalid login credentials. Please check your email and password and try again',
   }
   return codeMatcher[errorCode] || codeMatcherFirebase[errorCode] || 'error';
 }

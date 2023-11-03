@@ -1,3 +1,4 @@
+export * from './colors';
 export * from './constants';
 export * from './getValidationError';
 export * from './index';

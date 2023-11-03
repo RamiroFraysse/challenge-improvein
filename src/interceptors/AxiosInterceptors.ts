@@ -21,6 +21,7 @@ export const AxiosInterceptor = () => {
   axios.interceptors.response.use(
     (response:AxiosResponse) => {return response;},
     (error)=>{
+      console.log({error});
       SnackbarUtilities.error(getValidationError(error.code));
       return Promise.reject(error);
     }

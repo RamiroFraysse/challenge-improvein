@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { MAIN_GREEN_COLOR } from "@/utilities";
 
 export const HomeHeaderStyled = styled.div`
   margin-top:7rem;
@@ -13,7 +14,7 @@ export const HomeTitle = styled.h1`
   text-align:center;
   margin:auto;
   width:100%;
-  color:#6EE7B7;
+  color:${MAIN_GREEN_COLOR};
 `
 export const SubTitle = styled.h2`
   font-size:1rem;
@@ -38,7 +39,7 @@ export const ContainerList = styled.ul`
 `
 
 export const ButtonSort = styled.button`
-  background-color: #6EE7B7; 
+  background-color: ${MAIN_GREEN_COLOR}; 
   border: none;
   color: #000;
   font-weight: bold;
@@ -55,6 +56,6 @@ export const InputFilter = styled.input`
   placeholder-opacity: 0.25;
 
   &:focus {
-    border: 2px solid #6EE7B7;
+    border: 2px solid ${MAIN_GREEN_COLOR};
   }
 `;
