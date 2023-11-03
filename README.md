@@ -13,7 +13,7 @@ https://github.com/improvein/dev-challenge/blob/master/frontend-react/README.md
 
 - **Redux for Global State Management:** Redux is used to manage global application state, allowing for efficient data management and synchronization.
 
-- **Storybook for Component Library:** The project includes my custom library of components built with Storybook.
+- **Storybook for Component Library:** The project includes my custom library of components built with Storybook. rf-sb-components
 
 - **Axios for Data Fetching:** Axios is utilized for making HTTP requests. It also includes an interceptor for error handling, allowing for the display of appropriate error messages.
 
